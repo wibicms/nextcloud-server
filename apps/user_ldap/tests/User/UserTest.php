@@ -1000,7 +1000,7 @@ class UserTest extends \Test\TestCase {
 			->with($this->equalTo('user_ldap'),
 				$this->equalTo('updateAttributesInterval'),
 				$this->anything())
-			->will($this->returnValue(1800);
+			->will($this->returnValue(1800));
 
 		$config->expects($this->exactly(2))
 			->method('getUserValue');
