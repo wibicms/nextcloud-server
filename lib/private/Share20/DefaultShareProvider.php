@@ -177,6 +177,9 @@ class DefaultShareProvider implements IShareProvider {
 			throw new ShareNotFound();
 		}
 
+		$mailSendValue = $share->getMailSend();
+		$data['mail_send'] = ($mailSendValue === null) ? true : $mailSendValue;
+
 		$share = $this->createShare($data);
 		return $share;
 	}
@@ -831,7 +834,7 @@ class DefaultShareProvider implements IShareProvider {
 			->setShareType((int)$data['share_type'])
 			->setPermissions((int)$data['permissions'])
 			->setTarget($data['file_target'])
-			->setMailSend(true);
+			->setMailSend((bool)$data['mail_send']);
 
 		$shareTime = new \DateTime();
 		$shareTime->setTimestamp((int)$data['stime']);
