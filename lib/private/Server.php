@@ -54,6 +54,7 @@ use OC\AppFramework\Utility\TimeFactory;
 use OC\Authentication\LoginCredentials\Store;
 use OC\Command\CronBus;
 use OC\Contacts\ContactsMenu\ActionFactory;
+use OC\Contacts\ContactsMenu\ContactsStore;
 use OC\Diagnostics\EventLogger;
 use OC\Diagnostics\QueryLogger;
 use OC\Federation\CloudIdManager;
@@ -1066,6 +1067,17 @@ class Server extends ServerContainer implements IServerContainer {
 				$c->query(\OCP\Share\IManager::class)
 			);
 		});
+
+		$this->registerService(\OCP\Contacts\ContactsMenu\IContactsStore::class, function(Server $c) {
+			return new ContactsStore(
+				$this->getContactsManager(),
+				$this->getConfig(),
+				$this->getUserManager(),
+				$this->getGroupManager()
+			);
+		});
+
+
 	}
 
 	/**

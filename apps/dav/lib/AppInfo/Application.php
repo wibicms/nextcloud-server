@@ -72,6 +72,16 @@ class Application extends App {
 		$cm->setupContactsProvider($contactsManager, $userID, $urlGenerator);
 	}
 
+	/**
+	 * @param IManager $contactsManager
+	 */
+	public function setupSystemContactsProvider(IManager $contactsManager) {
+		/** @var ContactsManager $cm */
+		$cm = $this->getContainer()->query(ContactsManager::class);
+		$urlGenerator = $this->getContainer()->getServer()->getURLGenerator();
+		$cm->setupSystemContactsProvider($contactsManager, $urlGenerator);
+	}
+
 	public function registerHooks() {
 		/** @var HookManager $hm */
 		$hm = $this->getContainer()->query(HookManager::class);
