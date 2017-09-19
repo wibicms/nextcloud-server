@@ -108,6 +108,7 @@ OC.MimeTypeList={
     "folder-public",
     "folder-shared",
     "folder-starred",
+    "folder-encrypted",
     "image",
     "link",
     "location",
