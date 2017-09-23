@@ -53,6 +53,9 @@ class IconBuilder {
 	 * @return string|false image blob
 	 */
 	public function getFavicon($app) {
+		if (!$this->themingDefaults->shouldReplaceIcons()) {
+			return false;
+		}
 		try {
 			$favicon = new Imagick();
 			$favicon->setFormat("ico");
