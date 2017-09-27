@@ -441,19 +441,10 @@ table td.filename .uploadtext {
 
 /* File checkboxes */
 #fileList tr td.filename>.selectCheckBox + label:before {
-	opacity: 0;
 	position: absolute;
 	bottom: 4px;
 	right: 0;
 	z-index: 10;
-}
-
-/* Show checkbox when hovering, checked, or selected */
-#fileList tr:hover td.filename>.selectCheckBox + label:before,
-#fileList tr:focus td.filename>.selectCheckBox + label:before,
-#fileList tr td.filename>.selectCheckBox:checked + label:before,
-#fileList tr.selected td.filename>.selectCheckBox + label:before {
-	opacity: 1;
 }
 
 /* Use label to have bigger clickable size for checkbox */
