@@ -438,37 +438,14 @@ table td.filename .uploadtext {
 	opacity: .5;
 }
 
-/* File checkboxes */
-#fileList tr td.filename>.selectCheckBox + label:before {
-	position: absolute;
-	bottom: 4px;
-	right: 0;
-	z-index: 10;
+table td.selection {
+	padding: 0;
 }
 
 /* Use label to have bigger clickable size for checkbox */
-#fileList tr td.filename>.selectCheckBox + label,
+#fileList tr td.selection>.selectCheckBox + label,
 .select-all + label {
-	background-position: 30px 30px;
-	height: 50px;
-	position: absolute;
-	width: 50px;
-	z-index: 5;
-}
-#fileList tr td.filename>.selectCheckBox {
-	/* sometimes checkbox height is bigger (KDE/Qt), so setting to absolute
-	 * to prevent it to increase the height */
-	position: absolute;
-	z-index: 10;
-}
-.select-all + label {
-	top: 0;
-}
-.select-all + label:before {
-	position: absolute;
-	top: 18px;
-	left: 18px;
-	z-index: 10;
+	padding: 16px;
 }
 
 #fileList tr td.filename {
