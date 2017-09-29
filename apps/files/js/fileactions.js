@@ -370,6 +370,9 @@
 		_renderMenuTrigger: function($tr, context) {
 			// remove previous
 			$tr.find('.action-menu').remove();
+			var isE2EEncrypted = $tr.data('e2eencrypted');
+
+			if (isE2EEncrypted) return;
 
 			var $el = this._renderInlineAction({
 				name: 'menu',
